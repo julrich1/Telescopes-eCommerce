@@ -64,20 +64,22 @@ function sortProducts(productList, criteria) {
 
 // Add something to the cart based on its product ID
 function addToCart(id) {
+  let found = false;
+
   for (const product of products) {
     if (product.id === id) {
       //Check to see if this item is already in the cart
-      if (cart.length > 0) {
-        for (const cartProduct of cart) {
-          if (cartProduct.id === id) {
-            cartProduct.quantity++;
-          }
+      for (const cartProduct of cart) {
+        if (cartProduct.id === id) {
+          found = true;
+          cartProduct.quantity++;
         }
       }
-      else {
-        let cartProduct = Object.assign({}, product);
+
+      if (!found) {
+        const cartProduct = Object.assign({}, product);
         cartProduct.quantity = 1;
-        cart.push(partProduct);
+        cart.push(cartProduct);
       }
     }
   }
@@ -106,6 +108,22 @@ function loadCart() {
   if (jsonCart) {
     cart = JSON.parse(jsonCart);
   }
+}
+
+function updateCartDisplay() {
+  const totalItems = getCartItems();
+
+  $("#cart").text(`${totalItems} items in cart`);
+}
+
+function getCartItems() {
+  let total = 0;
+
+  for (const product of cart) {
+    total += product.quantity;
+  }
+
+  return total;
 }
 
 function getRatingElements(id) {
@@ -140,23 +158,12 @@ function drawFeaturedProducts() {
   const featuredProducts = getProducts(3);
 
   for (const product of featuredProducts) {
-  //
-  // <div class="card">
-  //   <div class="card-image">
-  //     <img src="images/sample-1.jpg">
-  //     <span class="card-title">Card Title</span>
-  //     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-  //   </div>
-  //   <div class="card-content">
-  //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-  //   </div>
-  // </div>
-
+    const $colDiv = $("<div>").addClass("col s4");
     const $cardDiv = $("<div>").addClass("card");
     const $cardImageDiv = $("<div>").addClass("card-image");
     const $cardImage = $("<img>");
     const $cardTitle = $("<span>").addClass("card-title");
-    const $cardButton = $("<a>").addClass("btn-floating halfway-fab waves-effect waves-light red");
+    const $cardButton = $("<a>").addClass("btn-floating btn-large halfway-fab waves-effect waves-light red");
     const $cardIcon = $("<i>").addClass("material-icons").text("add_shopping_cart");
     const $cardContent = $("<div>").addClass("card-content");
 
@@ -164,34 +171,31 @@ function drawFeaturedProducts() {
     const $productPrice = $("<p>");
     const $productRating = getRatingElements(product.id);
 
+    // $cardDiv.attr("id", `product-${product.id}`);
     $cardImage.attr("src", product.image);
     $productName.text(product.name);
     $productPrice.text(product.price);
+
+    $cardButton.data("product-id", product.id);
+
+    $cardButton.click(function() {
+      addToCart(jQuery.data(this, "product-id"));
+      saveCart();
+      updateCartDisplay();
+    });
 
     $cardButton.append($cardIcon);
     $cardImageDiv.append($cardImage, $cardTitle, $cardButton);
     $cardContent.append($productName, $productPrice, $productRating);
 
     $cardDiv.append($cardImageDiv, $cardContent);
-    //
-    // const $productPrice = $("<p>");
-    // const $imageDiv = $("<div>");
-    // const $productRating = getRatingElements(product.id);
+    $colDiv.append($cardDiv);
 
-    // $productDiv.addClass("product");
-    // $productImg.addClass("product-image");
-    // $productName.addClass("product-title");
-
-
-    // $imageDiv.append($productImg);
-    // $productDiv.append($imageDiv);
-    // $productDiv.append($productName);
-    // $productDiv.append($productPrice);
-    // $productDiv.append($productRating);
-
-    $("#featured1").append($cardDiv);
+    $("#featuredProd").append($colDiv);
   }
 }
 
 drawCarousel();
 drawFeaturedProducts();
+loadCart();
+updateCartDisplay();
