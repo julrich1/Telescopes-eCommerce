@@ -5,7 +5,7 @@ const products = [
     productName: "Discovery 15\" F/5 Truss Tube Dobsonian Telescope",
     rating: 5,
     price: "2999.00",
-    categories: ["Dobsonian"]
+    categories: ["dobsonian"]
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const products = [
     productName: "Orion Skyquest XT8I Intelliscope Dobsonian Telescope",
     rating: 5,
     price: "649.99",
-    categories: ["Reflector"]
+    categories: ["reflector"]
   },
   {
     id: 3,
@@ -21,12 +21,15 @@ const products = [
     productName: "APM 152/1200 APO Triplet",
     rating: 5,
     price: "12999.00",
-    categories: ["Dobsonian"]
+    categories: ["refractor"]
   }
 ];
 
+const categories = ["dobsonian", "reflector", "refractor"];
+
 let cart = [];
 
+// Return a number of products sequentially
 function getProducts(number) {
   const result = [];
 
@@ -37,6 +40,7 @@ function getProducts(number) {
   return result;
 }
 
+// Return a list of products based on a category
 function getProductsByCategory(categoryName) {
   const result = [];
 
@@ -51,12 +55,14 @@ function getProductsByCategory(categoryName) {
   return result;
 }
 
+// Sort product based on supplied criteria
 function sortProducts(productList, criteria) {
   if (criteria === "price") {
     //Do sorting
   }
 }
 
+// Add something to the cart based on its product ID
 function addToCart(id) {
   for (const product of products) {
     if (product.id === id) {
@@ -77,6 +83,7 @@ function addToCart(id) {
   }
 }
 
+// Remove something from the cart based on its product ID
 function removeFromCart(id) {
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].id === id) {
@@ -85,12 +92,14 @@ function removeFromCart(id) {
   }
 }
 
+//Save the cart to local storage
 function saveCart() {
   const jsonCart = JSON.stringify(cart);
 
   localStorage.setItem("cart", jsonCart);
 }
 
+// Load the cart from local storage if it exists
 function loadCart() {
   const jsonCart = localStorage.getItem("cart");
 
@@ -98,3 +107,16 @@ function loadCart() {
     cart = JSON.parse(jsonCart);
   }
 }
+
+function drawCarousel() {
+  const products = getProducts(1);
+
+  const $carouselDiv = $("<div>");
+  const $img = $("<img>");
+  $img.prop("src", products[0].image);
+
+  $carouselDiv.append($img);
+  $("#carousel").append($carouselDiv);
+}
+
+drawCarousel();
