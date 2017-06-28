@@ -1,26 +1,26 @@
 const products = [
   {
     id: 1,
-    image: "URL",
-    productName: "Telescope",
+    image: "img/Discovery.jpg",
+    productName: "Discovery 15\" F/5 Truss Tube Dobsonian Telescope",
     rating: 5,
-    price: "5.00",
+    price: "2999.00",
     categories: ["Dobsonian"]
   },
   {
     id: 2,
-    image: "URL",
-    productName: "Telescope",
+    image: "img/Orion.jpg",
+    productName: "Orion Skyquest XT8I Intelliscope Dobsonian Telescope",
     rating: 5,
-    price: "5.00",
-    categories: ["Dobsonian"]
+    price: "649.99",
+    categories: ["Reflector"]
   },
   {
     id: 3,
-    image: "URL",
-    productName: "Telescope",
+    image: "APM.jpg",
+    productName: "APM 152/1200 APO Triplet",
     rating: 5,
-    price: "5.00",
+    price: "12999.00",
     categories: ["Dobsonian"]
   }
 ];
