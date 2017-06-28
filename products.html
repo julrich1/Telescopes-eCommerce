@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="/js/materialize.js"></script>
-    <script src="/js/index.js"></script>
+    <script src="js/materialize.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/products.js"></script>
   </head>
   <body>
 
@@ -21,7 +22,7 @@
               <li><a href="index.html">Home</a></li>
               <li><a class="blue darken-4" href="products.html">Products</a></li>
               <li><a href="checkout.html">Checkout</a></li>
-              <a class="waves-effect waves-light btn" href="checkout.html">Cart 0 Items</a>
+              <a class="waves-effect waves-light btn" href="checkout.html" id="cart">Cart 0 Items</a>
             </ul>
           </div>
         </nav>
@@ -38,57 +39,21 @@
               <h3>Products</h3>
             </div>
             <div class="row">
-              <a>Sort by Catagory 1:</a><span> Catagory </span><span> Catagory </span><span> Catagory </span><span> Catagory </span><span> Catagory </span>
+              <a>Sort by Category:</a><span> Catagory </span><span> Catagory </span><span> Catagory </span><span> Catagory </span><span> Catagory </span>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <a>Sort by Catagory 2:</a><span> Catagory </span><span> Catagory </span><span> Catagory </span><span> Catagory </span><span> Catagory </span>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
 
       <hr>
 
-      <div id="prodList">
+      <div>
         <div class="row">
-          <div class="col s12">
-
-            <div class="row">
-              <div class="col s5">
-                <img src="https://www.optcorp.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/i/pi-rc24_astrograph.jpg" height=200px width=auto>
-              </div>
-              <div class="col s7">
-                <h5>PLANEWAVE 24" RITCHEY-CHRÉTIEN ASTROGRAPH OTA</h5>
-                <p>$64,995.00</p>
-                <a>* * * * *</a>
-                <p>The PlaneWave Instruments PW24-RC is a 24" (0.51 m) f/6.5 Ritchey-Chrétien (RC) Astrograph telescope OTA. The PW24-RC has a dual carbon fiber truss design, with 3 cooling fans ejecting air from the back of the telescope and 4 fans at the front of the primary mirror to quickly cool the primary mirror and keep its temperature stabilized. The instrument weight is 140 lb (64 kg) and it comes standard with a back plate retaining ring ready to accept the focuser of your choice.</p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col s5">
-                <img src="https://www.optcorp.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/i/pi-rc24_astrograph.jpg" height=200px width=auto>
-              </div>
-              <div class="col s7">
-                <h5>PLANEWAVE 24" RITCHEY-CHRÉTIEN ASTROGRAPH OTA</h5>
-                <p>$64,995.00</p>
-                <a>* * * * *</a>
-                <p>The PlaneWave Instruments PW24-RC is a 24" (0.51 m) f/6.5 Ritchey-Chrétien (RC) Astrograph telescope OTA. The PW24-RC has a dual carbon fiber truss design, with 3 cooling fans ejecting air from the back of the telescope and 4 fans at the front of the primary mirror to quickly cool the primary mirror and keep its temperature stabilized. The instrument weight is 140 lb (64 kg) and it comes standard with a back plate retaining ring ready to accept the focuser of your choice.</p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col s5">
-                <img src="https://www.optcorp.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/i/pi-rc24_astrograph.jpg" height=200px width=auto>
-              </div>
-              <div class="col s7">
-                <h5>PLANEWAVE 24" RITCHEY-CHRÉTIEN ASTROGRAPH OTA</h5>
-                <p>$64,995.00</p>
-                <a>* * * * *</a>
-                <p>The PlaneWave Instruments PW24-RC is a 24" (0.51 m) f/6.5 Ritchey-Chrétien (RC) Astrograph telescope OTA. The PW24-RC has a dual carbon fiber truss design, with 3 cooling fans ejecting air from the back of the telescope and 4 fans at the front of the primary mirror to quickly cool the primary mirror and keep its temperature stabilized. The instrument weight is 140 lb (64 kg) and it comes standard with a back plate retaining ring ready to accept the focuser of your choice.</p>
-              </div>
-            </div>
-
+          <div class="col s12" id="prodList">
+            <!-- Javascript inserts here !-->
           </div>
         </div>
       </div>
