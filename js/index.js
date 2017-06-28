@@ -140,28 +140,56 @@ function drawFeaturedProducts() {
   const featuredProducts = getProducts(3);
 
   for (const product of featuredProducts) {
-    const $productDiv = $("<div>");
-    const $productImg = $("<img>");
-    const $productName = $("<h6>");
+  //
+  // <div class="card">
+  //   <div class="card-image">
+  //     <img src="images/sample-1.jpg">
+  //     <span class="card-title">Card Title</span>
+  //     <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+  //   </div>
+  //   <div class="card-content">
+  //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+  //   </div>
+  // </div>
+
+    const $cardDiv = $("<div>").addClass("card");
+    const $cardImageDiv = $("<div>").addClass("card-image");
+    const $cardImage = $("<img>");
+    const $cardTitle = $("<span>").addClass("card-title");
+    const $cardButton = $("<a>").addClass("btn-floating halfway-fab waves-effect waves-light red");
+    const $cardIcon = $("<i>").addClass("material-icons").text("add_shopping_cart");
+    const $cardContent = $("<div>").addClass("card-content");
+
+    const $productName = $("<p>");
     const $productPrice = $("<p>");
-    const $imageDiv = $("<div>");
     const $productRating = getRatingElements(product.id);
 
-    $productDiv.addClass("product");
-    $productImg.addClass("product-image");
-    $productName.addClass("product-title");
-
-    $productImg.attr("src", product.image);
+    $cardImage.attr("src", product.image);
     $productName.text(product.name);
     $productPrice.text(product.price);
 
-    $imageDiv.append($productImg);
-    $productDiv.append($imageDiv);
-    $productDiv.append($productName);
-    $productDiv.append($productPrice);
-    $productDiv.append($productRating);
+    $cardButton.append($cardIcon);
+    $cardImageDiv.append($cardImage, $cardTitle, $cardButton);
+    $cardContent.append($productName, $productPrice, $productRating);
 
-    $("#featuredProd").append($productDiv);
+    $cardDiv.append($cardImageDiv, $cardContent);
+    //
+    // const $productPrice = $("<p>");
+    // const $imageDiv = $("<div>");
+    // const $productRating = getRatingElements(product.id);
+
+    // $productDiv.addClass("product");
+    // $productImg.addClass("product-image");
+    // $productName.addClass("product-title");
+
+
+    // $imageDiv.append($productImg);
+    // $productDiv.append($imageDiv);
+    // $productDiv.append($productName);
+    // $productDiv.append($productPrice);
+    // $productDiv.append($productRating);
+
+    $("#featured1").append($cardDiv);
   }
 }
 
