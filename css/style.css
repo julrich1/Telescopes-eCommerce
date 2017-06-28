@@ -1,3 +1,11 @@
 .star-rating {
-  width: 30px;
+  width: 20px;
+}
+
+.product, .product-title {
+  display: inline-block;
+}
+
+.product-image {
+  width: 200px;
 }
