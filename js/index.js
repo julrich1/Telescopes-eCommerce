@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     image: "img/Discovery.jpg",
-    productName: "Discovery 15\" F/5 Truss Tube Dobsonian Telescope",
+    name: "Discovery 15\" F/5 Truss Tube Dobsonian Telescope",
     rating: 5,
     price: "2999.00",
     categories: ["dobsonian"]
@@ -10,16 +10,16 @@ const products = [
   {
     id: 2,
     image: "img/Orion.jpg",
-    productName: "Orion Skyquest XT8I Intelliscope Dobsonian Telescope",
-    rating: 5,
+    name: "Orion Skyquest XT8I Intelliscope Dobsonian Telescope",
+    rating: 3,
     price: "649.99",
     categories: ["reflector"]
   },
   {
     id: 3,
-    image: "APM.jpg",
-    productName: "APM 152/1200 APO Triplet",
-    rating: 5,
+    image: "img/APM.jpg",
+    name: "APM 152/1200 APO Triplet",
+    rating: 2,
     price: "12999.00",
     categories: ["refractor"]
   }
@@ -108,15 +108,62 @@ function loadCart() {
   }
 }
 
+function getRatingElements(id) {
+  for (const product of products) {
+    if (product.id === id) {
+      $ratingElement = $("<div>");
+      for (var i = 1; i <= product.rating; i++) {
+        $ratingElement.append($("<img>").attr("src", "img/star-full.png").addClass("star-rating"));
+      }
+
+      for (let j = i; j <= 5; j++) {
+        $ratingElement.append($("<img>").attr("src", "img/star-empty.png").addClass("star-rating"));
+      }
+
+      return $ratingElement;
+    }
+  }
+}
+
 function drawCarousel() {
   const products = getProducts(1);
 
   const $carouselDiv = $("<div>");
   const $img = $("<img>");
-  $img.prop("src", products[0].image);
+  $img.attr("src", products[0].image);
 
   $carouselDiv.append($img);
   $("#carousel").append($carouselDiv);
 }
 
+function drawFeaturedProducts() {
+  const featuredProducts = getProducts(3);
+
+  for (const product of featuredProducts) {
+    const $productDiv = $("<div>");
+    const $productImg = $("<img>");
+    const $productName = $("<h6>");
+    const $productPrice = $("<p>");
+    const $imageDiv = $("<div>");
+    const $productRating = getRatingElements(product.id);
+
+    $productDiv.addClass("product");
+    $productImg.addClass("product-image");
+    $productName.addClass("product-title");
+
+    $productImg.attr("src", product.image);
+    $productName.text(product.name);
+    $productPrice.text(product.price);
+
+    $imageDiv.append($productImg);
+    $productDiv.append($imageDiv);
+    $productDiv.append($productName);
+    $productDiv.append($productPrice);
+    $productDiv.append($productRating);
+
+    $("#featuredProd").append($productDiv);
+  }
+}
+
 drawCarousel();
+drawFeaturedProducts();
