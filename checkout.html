@@ -29,10 +29,90 @@
 
     <main>
 
+      <div class="container">
+
       <div id="checkReceipt">
+        <!-- //top section *** Checkout *** -->
+        <div class="row">
+          <div class="row">
+            <h3>Checkout</h3>
+          </div>
+          <div class="row">
+            <div class="col s6">
+              // 2 columns x rows with header 'Your Purchase'
+            </div>
+            <div class="col s6">
+              // 2 colums x 1 row with 'Total' on column 1 'align:bottom'
+            </div>
+          </div>
+        </div>
       </div>
 
+      <hr>
+
+      <div class="row">
+      </div>
+
+      <div class="col s12">
+      </div>
+
+
       <div id="checkForm">
+        <form>
+          <div class="row">
+            <h5>Shipping</h5>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="company" type="text" class="validate">
+              <label for="company">Company</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="add1" type="text" class="validate">
+              <label for="add1">Address 1</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="add2" type="text" class="validate">
+              <label for="add2">Address 2</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <select>
+                <option value="" disabled selected>Choose your State</option>
+                <option value="1">Alaska</option>
+                <option value="2">California</option>
+                <option value="3">Hawaii</option>
+                <option value="3">Idaho</option>
+                <option value="3">Montana</option>
+                <option value="3">Oregon</option>
+              </select>
+              <label>State</label>
+            </div>
+            <div class=" input-field col s4">
+              <input id="zip" type="text" class="validate">
+              <label for="zip">Zip</label>
+            </div>
+            <div class="input-field col s4">
+              <p>
+                <input type="checkbox" id="ship2bill" />
+                <label for="ship2bill">Copy Shipping to Billing?</label>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+
       </div>
 
     </main>
