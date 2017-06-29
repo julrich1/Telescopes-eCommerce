@@ -113,13 +113,17 @@
    height: 2.1rem !important;
  }
 
+ .input-field {
+   margin: 0 0 5px 0;
+ }
+
  .select-dropdown {
    margin: 0 0 0 0 !important;
    /*height: 2.1rem !important;*/
  }
 
  .row {
-   margin: 0 0 10px 0 !important;
+   margin: 0 0 5px 0 !important;
  }
 
  .modal-content {
