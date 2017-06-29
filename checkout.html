@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/materialize.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/temp.css"> -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script defer src="js/common.js"></script>
@@ -113,13 +114,14 @@
           <div class="row">
             <div class="input-field col s4">
               <select id="state" required>
-                <option value="" selected disabled>Choose your State</option>
+                <option value="" selected disabled></option>
                 <option value="Alaska">Alaska</option>
                 <option value="California">California</option>
                 <option value="Hawaii">Hawaii</option>
                 <option value="Idaho">Idaho</option>
                 <option value="Montana">Montana</option>
                 <option value="Oregon">Oregon</option>
+                <option value="Oregon">Washington</option>
               </select>
               <label>State</label>
             </div>
@@ -231,10 +233,62 @@
           <!-- <h5 class="white-text">Links</h5> -->
           <ul>
             <li><a class="grey-text text-lighten-3 lft-mar" href="#!">Articles</a></li>
-            <li><img src="img/Articles/Jupiter.jpeg" height="30px" width="auto"><a class="grey-text text-lighten-3 lft-mar" href="#!">Thursday, June 29, 2017: Jupiter</a></li>
-            <li><img src="img/Articles/sun.jpeg" height="30px" width="auto"><a class="grey-text text-lighten-3 lft-mar" href="#!">Wednesday, June 21, 2017: Sun</a></li>
-            <li><img src="img/Articles/r_aquarii.jpeg" height="30px" width="auto"><a class="grey-text text-lighten-3 lft-mar" href="#!">Monday, June 12, 2017: R Aquarii</a></li>
+            <li><img src="img/Articles/Jupiter.jpeg" height="30px" width="auto"><a class="waves-effect waves-light modal-close lft-mar" href="#modal1"> June 29, 2017: Jupiter </a></li>
+            <li><img src="img/Articles/sun.jpeg" height="30px" width="auto"><a class="waves-effect waves-light modal-close lft-mar" href="#modal2"> June 21, 2017: Sun </a></li>
+            <li><img src="img/Articles/r_aquarii.jpeg" height="30px" width="auto"><a class="waves-effect waves-light modal-close lft-mar" href="#modal3"> June 12, 2017: R Aquarii </a></li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s7">
+              <img src="img/Articles/Jupiter.jpeg" height="auto" width="315px">
+            </div>
+            <div class="col s5">
+              <h4>Jupiter</h4>
+              <p>Thursday, June 29, 2017: Jupiter's intricate light and dark bands of cloud formations mesmerize in this enhanced image from NASA's Juno spacecraft. Citizen scientists Gerald Eichstädt and Seán Doran created the image using data Juno collected
+                on May 19, when it was about 20,800 miles (33,400 kilometers) above Jupiter's cloud tops. — Hanneke Weitering</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s7">
+              <img src="img/Articles/Sun.jpeg" height="auto" width="315px">
+            </div>
+            <div class="col s5">
+              <h4>Sun</h4>
+              <p>Wednesday, June 21, 2017: Today marks the first day of summer in the Northern hemisphere, where the sun's rays will light up the sky for a longer period of time than any other day of the year. Celebrate the extra sunlight today with this
+                gnarly image of the sun taken by NASA's Solar Dynamics Observatory on June 14. The satellite captured some solar activity on the sun's surface, with dark, cool streaks of plasma interacting at the sun's edge. — Hanneke Weitering</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <div class="col s12">
+          <div class="row">
+            <div class="col s7">
+              <img src="img/Articles/r_aquarii.jpeg" height="auto" width="315px">
+            </div>
+            <div class="col s5">
+              <h4>R Aquarii</h4>
+              <p>Monday, June 12, 2017: R Aquarii looks like one star, but it actually consists of two so-called "symbiotic stars" — one small, dense white dwarf and a larger, cooler red giant. The white dwarf star is less massive than its red giant companion,
+                but it's also more compact, which gives it a strong gravitational force. It pulls away the outer layers of the red giant, accumulating enough material to trigger thermonuclear fusion of hydrogen. This produces occasional nova explosions
+                on its surface. — Hanneke Weitering</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

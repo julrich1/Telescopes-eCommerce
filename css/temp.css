@@ -1,0 +1,23 @@
+/*jeff styles to make input fields smaller and closer together ***jm*/
+
+input {
+  margin: 0 0 0 0;
+  height: 2.1rem;
+}
+
+.select-dropdown {
+  margin: 0 0 0 0;
+  height: 2.1rem;
+}
+
+.row {
+  margin: 0 0 10px 0;
+}
+
+.modal-content {
+  color: black;
+}
+
+.modal-close {
+  color: white;
+}

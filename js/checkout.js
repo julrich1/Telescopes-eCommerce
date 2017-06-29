@@ -135,3 +135,9 @@ loadCart();
 updateCartDisplay();
 drawCheckout();
 formatCurrency("58444444494.99");
+
+// this is to initilize modals ***jam
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
