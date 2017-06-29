@@ -5,16 +5,16 @@ function displayProducts() {
     const $row = $("<div>").addClass("row");
     const $colImg = $("<div>").addClass("col s5");
     const $img = $("<img>").attr("src", product.image);
-    const $colDesc = $("<div>").addClass("row");
+    const $colDesc = $("<div>").addClass("col s7");
     const $h5 = $("<h5>").text(product.name);
     const $price = $("<p>").text(product.price);
     const $checkout = $("<a>").addClass("waves-effect waves-light btn");
     const $icon = $("<i>").addClass("material-icons").text("add_shopping_cart");
     const $rating = getRatingElements(product.id);
-    const $description = $("<p>").text("PLACEHOLDER");
+    const $description = $("<p>").text(product.description);
 
     $checkout.data("product-id", product.id);
-    
+
     $checkout.click(function() {
       addToCart(jQuery.data(this, "product-id"));
       saveCart();

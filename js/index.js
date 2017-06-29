@@ -1,26 +1,30 @@
 function drawCarousel() {
   const products = getProducts(3);
 
-  // const $carouselDiv = $("<div>");
-  // const $img = $("<img>");
-  // $img.attr("src", products[0].image);
-
-
-  // $carouselDiv.append($img);
-  // $("#carousel").append($carouselDiv);
-
-  // <div class="carousel carousel-slider" data-indicators="true">
-  //   <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-  //   <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-  //   <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-  //   <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
-  // </div>
   for (const product of products) {
-    // $(".carousel").append($("<a>").attr("src", "https://lorempixel.com/800/400/food/4").addClass("carousel-item"));
+    const $carouselDiv = $("<div>").addClass("mySlides fade");
+    const $img = $("<img>").attr("src", product.image);
+    const $caption = $("<div>").addClass("text").text("Caption!");
+    const $br = $("<br>");
+
+    $carouselDiv.append($img, $caption, $br);
+    $(".slideshow-container").append($carouselDiv);
   }
 
-  $('.carousel.carousel-slider').carousel({fullWidth: true});
-  $('.carousel').carousel();
+  const $dotDiv = $("<div>");
+  $dotDiv.css("text-align: center");
+
+  for (let i = 1; i <= products.length; i++) {
+    const $dot = $("<span>").addClass("dot");
+    $dot.click(() => {
+      currentSlide(i);
+    });
+    $dotDiv.append($dot);
+  }
+
+  $(".col.s12.center").append($dotDiv);
+
+  showSlides(1);
 }
 
 function drawFeaturedProducts() {
@@ -64,7 +68,7 @@ function drawFeaturedProducts() {
   }
 }
 
-// drawCarousel();
+drawCarousel();
 // $('.carousel.carousel-slider').carousel({fullWidth: true});
 drawFeaturedProducts();
 loadCart();
