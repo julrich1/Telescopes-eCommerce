@@ -24,7 +24,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a class="blue darken-4" href="checkout.html">Checkout</a></li>
-          <a class="waves-effect waves-light btn" href="checkout.html">Cart 0 Items</a>
+          <a class="waves-effect waves-light btn" href="checkout.html" id="cart">Cart 0 Items</a>
         </ul>
       </div>
     </nav>
@@ -43,44 +43,27 @@
           <div class="row">
             <div class="col s12">
               <div style="display:flex">
-              <div class="col s6">
+              <div class="col s8">
                 <!-- // 2 columns x rows with header 'Your Purchase' -->
-                <table class="striped">
+                <table class="striped" id="checkout-table">
                   <thead>
                     <tr>
-                      <th><strong>Your Purchase</strong></th>
-                      <th></th>
+                      <!-- <th><strong>Your Purchase</strong></th> -->
+                      <th>Quantity</th>
+                      <th>Description</th>
+                      <th>Price</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Discription</td>
-                      <td>$0.00</td>
-                    </tr>
-                    <tr>
-                      <td>Discription</td>
-                      <td>$0.00</td>
-                    </tr>
-                    <tr>
-                      <td>Discription</td>
-                      <td>$0.00</td>
-                    </tr>
-                    <tr>
-                      <td>Discription</td>
-                      <td>$0.00</td>
-                    </tr>
+                    <!-- JavasScript inserts here -->
                   </tbody>
                 </table>
               </div>
               <!-- </div> -->
               <!-- <div class="col s6" style="vertical-align: bottom; display: table-cell"> -->
               <!-- // 2 colums x 1 row with 'Total' on column 1 'align:bottom' -->
-              <div class="col s6" style="align-self: flex-end">
-                <table>
-                  <tr>
-                    <td class="right-align"><strong>Total</strong></td>
-                    <td class="right-align"><strong>$0.00</strong></td>
-                  </tr>
+              <div class="col s4" style="align-self: flex-end">
+                <table id="total-table">
                 </table>
               </div>
             </div>
@@ -105,11 +88,11 @@
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <input id="first_name" type="text" class="validate">
+              <input id="first_name" type="text" class="validate" required>
               <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s4">
-              <input id="last_name" type="text" class="validate">
+              <input id="last_name" type="text" class="validate" required>
               <label for="last_name">Last Name</label>
             </div>
             <div class="input-field col s4">
@@ -119,7 +102,7 @@
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="add1" type="text" class="validate">
+              <input id="add1" type="text" class="validate" required>
               <label for="add1">Address 1</label>
             </div>
             <div class="input-field col s6">
@@ -129,8 +112,8 @@
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <select id="state">
-                <option value="" disabled selected>Choose your State</option>
+              <select id="state" required>
+                <option value="" selected disabled>Choose your State</option>
                 <option value="Alaska">Alaska</option>
                 <option value="California">California</option>
                 <option value="Hawaii">Hawaii</option>
@@ -140,8 +123,8 @@
               </select>
               <label>State</label>
             </div>
-            <div class=" input-field col s4">
-              <input id="zip" type="text" class="validate">
+            <div class="input-field col s4">
+              <input id="zip" type="text" class="validate" required>
               <label for="zip">Zip</label>
             </div>
             <div class="input-field col s4">
@@ -156,11 +139,11 @@
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <input id="a-first_name" type="text" class="validate">
+              <input id="a-first_name" type="text" class="validate" required>
               <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s4">
-              <input id="a-last_name" type="text" class="validate">
+              <input id="a-last_name" type="text" class="validate" required>
               <label for="last_name">Last Name</label>
             </div>
             <div class="input-field col s4">
@@ -170,7 +153,7 @@
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="a-add1" type="text" class="validate">
+              <input id="a-add1" type="text" class="validate" required>
               <label for="add1">Address 1</label>
             </div>
             <div class="input-field col s6">
@@ -180,7 +163,7 @@
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <select id="a-state">
+              <select id="a-state" required>
                 <option value="" disabled selected>Choose your State</option>
                 <option value="Alaska">Alaska</option>
                 <option value="California">California</option>
@@ -192,7 +175,7 @@
               <label>State</label>
             </div>
             <div class="input-field col s4">
-              <input id="a-zip" type="text" class="validate">
+              <input id="a-zip" type="text" class="validate" required>
               <label for="zip">Zip</label>
             </div>
             <div class="input-field col s4">
@@ -204,7 +187,7 @@
           <div class="row">
             <div class="col s5">
               <div class="input-field col s12">
-                <input id="cCard" type="text" class="validate">
+                <input id="cCard" type="text" class="validate" required>
                 <label for="cCard">Credit Card Number</label>
               </div>
             </div>
@@ -213,15 +196,15 @@
               <div class="col s12">
                 <!-- <div class="row"> -->
                 <div class="input-field col s4">
-                  <input id="exp" type="text" class="validate">
+                  <input id="exp" type="text" class="validate" required>
                   <label for="exp">Expiration</label>
                 </div>
                 <div class="input-field col s4">
-                  <input id="cvc" type="text" class="validate">
+                  <input id="cvc" type="text" class="validate" required>
                   <label for="cvc">CVC</label>
                 </div>
                 <div class="input-field col s4">
-                  <a class="waves-effect waves-light btn" id="purchase-button">Purchase</a>
+                  <button class="waves-effect waves-light btn" id="purchase-button">Purchase</button>
                 </div>
               </div>
             </div>

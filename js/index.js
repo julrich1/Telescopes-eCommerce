@@ -48,7 +48,7 @@ function drawFeaturedProducts() {
     const $cardIcon = $("<i>").addClass("material-icons").text("add_shopping_cart");
     const $cardContent = $("<div>").addClass("card-content");
 
-    const $productName = $("<p>");
+    const $productName = $("<p>").addClass("truncate");
     const $productPrice = $("<p>");
     const $productRating = getRatingElements(product.id);
 

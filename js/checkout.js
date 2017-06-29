@@ -1,5 +1,18 @@
 $(document).ready(function() {
     $('select').material_select();
+    $('select[required]').css({
+          display: 'inline',
+          position: 'absolute',
+          float: 'left',
+          padding: 0,
+          margin: 0,
+          border: '1px solid rgba(255,255,255,0)',
+          height: 0,
+          width: 0,
+          top: '2em',
+          left: '3em',
+          opacity: 0
+        });
 });
 
 $("#ship2bill").click(function() {
@@ -44,7 +57,9 @@ $("#ship2bill").click(function() {
   }
 });
 
-$("#purchase-button").click(function() {
+$("#checkForm").submit(function(event) {
+  event.preventDefault();
+
   if (validateInput()) {
     Materialize.toast('Order placed', 4000);
   }
@@ -54,13 +69,6 @@ $("#purchase-button").click(function() {
 });
 
 function validateInput() {
-  // first_name
-  // last_name
-  // add1
-  // add2
-  // state
-  // zip
-
   if ($("#first_name").val() && $("#last_name").val() && $("#add1").val() && $("#state").val() && $("#zip").val() &&
     $("#a-first_name").val() && $("#a-last_name").val() && $("#a-add1").val() && $("#a-state").val() && $("#a-zip").val() &&
     $("#cCard").val() && $("#exp").val() && $("#cvc").val()) {
@@ -69,3 +77,50 @@ function validateInput() {
 
   return false;
 }
+
+function drawCheckout() {
+  for (const product of cart) {
+    const $tableRow = $("<tr>");
+    const $tdQty = $("<td>").text(product.quantity).addClass("center");
+    const $tdDescription = $("<td>").text(product.name);
+    const $tdPrice = $("<td>").text(formatCurrency(product.price)).addClass("right");
+
+    $tableRow.append($tdQty, $tdDescription, $tdPrice);
+    $("#checkout-table").append($tableRow);
+  }
+
+  const $tableRow = $("<tr>");
+  const $tdTotal = $("<td>").addClass("right-align").html("<strong>Total</strong>").css("width", "70%");
+  const $tdTotalPrice = $("<td>").addClass("right-align").html(`<strong>${getCartTotal()}</strong>`);
+
+  $tableRow.append($tdTotal, $tdTotalPrice);
+  $("#total-table").append($tableRow);
+}
+
+function getCartTotal() {
+  let total = 0;
+
+  for (const product of cart) {
+    total += (product.price * product.quantity);
+  }
+
+  return formatCurrency(total);
+}
+
+function formatCurrency(price) {
+  if (typeof price !== "string") {
+    price = price.toString();
+  }
+
+  price = price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
+  price = price.split("");
+  price.unshift("$");
+
+  return price.join("");
+}
+
+loadCart();
+updateCartDisplay();
+drawCheckout();
+formatCurrency("58444444494.99");
