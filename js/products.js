@@ -9,14 +9,14 @@ function displayProducts(products) {
   for (const product of products) {
     const $row = $("<div>").addClass("row");
     const $colImg = $("<div>").addClass("col s5 center");
-    const $img = $("<img>").attr("src", product.image)
+    const $img = $("<img>").attr("src", product.image);
     const $colDesc = $("<div>").addClass("col s7");
     const $h5 = $("<h5>").text(product.name);
     const $price = $("<p>").text(formatCurrency(product.price));
     const $checkout = $("<a>").addClass("waves-effect waves-light btn");
     const $icon = $("<i>").addClass("material-icons").text("add_shopping_cart");
     const $rating = getRatingElements(product.id);
-    const $description = $("<p>").text(product.description);
+    const $description = $("<p>").html(product.description);
 
     $checkout.data("product-id", product.id);
 
@@ -39,8 +39,10 @@ function displayCategories() {
   const $catParent = $("#categories");
 
   const $all = $("<a>").text("All");
-  $all.addClass("waves-effect waves-teal btn-flat dob");
+  $all.addClass("waves-effect waves-teal btn-flat dob active-category");
   $all.click(function() {
+    $(".active-category").removeClass("active-category");
+    $(this).addClass("active-category");
     displayProducts();
   });
 
@@ -51,6 +53,8 @@ function displayCategories() {
     $category.addClass("waves-effect waves-teal btn-flat dob");
 
     $category.click(function() {
+      $(".active-category").removeClass("active-category");
+      $(this).addClass("active-category");
       displayProducts(getProductsByCategory(this.innerText.toLowerCase()));
     });
 

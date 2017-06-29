@@ -5,6 +5,10 @@
   margin-top: 10px;
 }
 
+.active-category {
+  font-weight: bold;
+}
+
 .product, .product-title {
   display: inline-block;
 }
