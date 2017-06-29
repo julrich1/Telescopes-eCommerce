@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
-    <script src="js/checkout.js"></script>
+    <script defer src="js/common.js"></script>
+    <script defer src="js/checkout.js"></script>
   </head>
   <body>
 
@@ -43,13 +44,13 @@
               <table>
                 <thead>
                   <tr>
-                    <th><strong>Your Purchase<strong></th>
+                    <th><strong>Your Purchase</strong></th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <
+                    ???
                   </tr>
                   <tr>
                   </tr>
@@ -64,7 +65,7 @@
               <!-- // 2 colums x 1 row with 'Total' on column 1 'align:bottom' -->
               <table valign="bottom">
                   <tr>
-                    <td><strong>Total<strong></td>
+                    <td><strong>Total</strong></td>
                     <td>$0.00</td>
                   </tr>
               </table>
@@ -113,14 +114,14 @@
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <select>
+              <select id ="state">
                 <option value="" disabled selected>Choose your State</option>
-                <option value="1">Alaska</option>
-                <option value="2">California</option>
-                <option value="3">Hawaii</option>
-                <option value="3">Idaho</option>
-                <option value="3">Montana</option>
-                <option value="3">Oregon</option>
+                <option value="Alaska">Alaska</option>
+                <option value="California">California</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Montana">Montana</option>
+                <option value="Oregon">Oregon</option>
               </select>
               <label>State</label>
             </div>
@@ -140,43 +141,43 @@
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <input id="first_name" type="text" class="validate">
+              <input id="a-first_name" type="text" class="validate">
               <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s4">
-              <input id="last_name" type="text" class="validate">
+              <input id="a-last_name" type="text" class="validate">
               <label for="last_name">Last Name</label>
             </div>
             <div class="input-field col s4">
-              <input id="company" type="text" class="validate">
+              <input id="a-company" type="text" class="validate">
               <label for="company">Company</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="add1" type="text" class="validate">
+              <input id="a-add1" type="text" class="validate">
               <label for="add1">Address 1</label>
             </div>
             <div class="input-field col s6">
-              <input id="add2" type="text" class="validate">
+              <input id="a-add2" type="text" class="validate">
               <label for="add2">Address 2</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <select>
+              <select id="a-state">
                 <option value="" disabled selected>Choose your State</option>
-                <option value="1">Alaska</option>
-                <option value="2">California</option>
-                <option value="3">Hawaii</option>
-                <option value="3">Idaho</option>
-                <option value="3">Montana</option>
-                <option value="3">Oregon</option>
+                <option value="Alaska">Alaska</option>
+                <option value="California">California</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Montana">Montana</option>
+                <option value="Oregon">Oregon</option>
               </select>
               <label>State</label>
             </div>
             <div class="input-field col s4">
-              <input id="zip" type="text" class="validate">
+              <input id="a-zip" type="text" class="validate">
               <label for="zip">Zip</label>
             </div>
             <div class="input-field col s4">
@@ -205,13 +206,11 @@
                       <label for="cvc">CVC</label>
                     </div>
                     <div class="input-field col s4">
-                      <a class="waves-effect waves-light btn">Purchase</a>
+                      <a class="waves-effect waves-light btn" id="purchase-button">Purchase</a>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
         </form>
       </div>
 
