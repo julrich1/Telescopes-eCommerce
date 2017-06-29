@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="/js/materialize.js"></script>
-    <script src="/js/index.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/checkout.js"></script>
   </head>
   <body>
 
@@ -108,6 +108,83 @@
                 <input type="checkbox" id="ship2bill" />
                 <label for="ship2bill">Copy Shipping to Billing?</label>
               </p>
+            </div>
+          </div>
+          <div class="row">
+            <h5>Billing</h5>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="company" type="text" class="validate">
+              <label for="company">Company</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="add1" type="text" class="validate">
+              <label for="add1">Address 1</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="add2" type="text" class="validate">
+              <label for="add2">Address 2</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <select>
+                <option value="" disabled selected>Choose your State</option>
+                <option value="1">Alaska</option>
+                <option value="2">California</option>
+                <option value="3">Hawaii</option>
+                <option value="3">Idaho</option>
+                <option value="3">Montana</option>
+                <option value="3">Oregon</option>
+              </select>
+              <label>State</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="zip" type="text" class="validate">
+              <label for="zip">Zip</label>
+            </div>
+            <div class="input-field col s4">
+            </div>
+          </div>
+          <div class="row">
+            <h5>Credit Card Information</h5>
+          </div>
+          <div class="row">
+            <div class="col s5">
+              <div class="input-field col s12">
+                <input id="cCard" type="text" class="validate">
+                <label for="cCard">Credit Card Number</label>
+              </div>
+            </div>
+            <div class="col s7">
+              <!-- <div class="row"> -->
+                <div class="col s12">
+                  <!-- <div class="row"> -->
+                    <div class="input-field col s4">
+                      <input id="exp" type="text" class="validate">
+                      <label for="exp">Expiration</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input id="cvc" type="text" class="validate">
+                      <label for="cvc">CVC</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <a class="waves-effect waves-light btn">Purchase</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </form>
