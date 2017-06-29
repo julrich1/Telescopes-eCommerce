@@ -1,3 +1,5 @@
+* {box-sizing:border-box}
+
 .star-rating {
   width: 20px;
 }
@@ -34,13 +36,12 @@
    /*padding: 18.75px 0px 0px 0px !important;*/
    margin-top: 18.75px;
  }
- * {box-sizing:border-box}
 
  /* Slideshow container */
  .slideshow-container {
-   max-width: 500px;
+   /*max-width: 500px;*/
    position: relative;
-   margin: auto;
+   margin-top: 30px;
  }
 
  .mySlides {

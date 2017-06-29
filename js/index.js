@@ -1,31 +1,39 @@
-function drawCarousel() {
-  const products = getProducts(3);
+// function drawCarousel() {
+//   const products = getProducts(3);
+//
+//   for (const product of products) {
+//     const $carouselDiv = $("<div>").addClass("mySlides fade");
+//     const $img = $("<img>").attr("src", product.image);
+//     const $caption = $("<div>").addClass("text").text("Caption!");
+//     const $br = $("<br>");
+//
+//     $carouselDiv.append($img, $caption, $br);
+//     $(".slideshow-container").append($carouselDiv);
+//   }
+//
+//   const $dotDiv = $("<div>");
+//   $dotDiv.css("text-align: center");
+//
+//   for (let i = 1; i <= products.length; i++) {
+//     const $dot = $("<span>").addClass("dot");
+//     $dot.click(() => {
+//       currentSlide(i);
+//     });
+//     $dotDiv.append($dot);
+//   }
+//
+//   $(".col.s12.center").append($dotDiv);
+//
+//   showSlides(1);
+// }
 
-  for (const product of products) {
-    const $carouselDiv = $("<div>").addClass("mySlides fade");
-    const $img = $("<img>").attr("src", product.image);
-    const $caption = $("<div>").addClass("text").text("Caption!");
-    const $br = $("<br>");
+$("#signup").submit(function(event) {
+  event.preventDefault();
 
-    $carouselDiv.append($img, $caption, $br);
-    $(".slideshow-container").append($carouselDiv);
-  }
-
-  const $dotDiv = $("<div>");
-  $dotDiv.css("text-align: center");
-
-  for (let i = 1; i <= products.length; i++) {
-    const $dot = $("<span>").addClass("dot");
-    $dot.click(() => {
-      currentSlide(i);
-    });
-    $dotDiv.append($dot);
-  }
-
-  $(".col.s12.center").append($dotDiv);
-
-  showSlides(1);
-}
+  $("#name").val("");
+  $("#email").val("");
+  Materialize.toast("Thank you for signing up.", 4000);
+});
 
 function drawFeaturedProducts() {
   const featuredProducts = getProducts(3);
@@ -34,7 +42,7 @@ function drawFeaturedProducts() {
     const $colDiv = $("<div>").addClass("col s4");
     const $cardDiv = $("<div>").addClass("card");
     const $cardImageDiv = $("<div>").addClass("card-image");
-    const $cardImage = $("<img>");
+    const $cardImage = $("<img>").addClass("product-image");
     const $cardTitle = $("<span>").addClass("card-title");
     const $cardButton = $("<a>").addClass("btn-floating btn-large halfway-fab waves-effect waves-light red");
     const $cardIcon = $("<i>").addClass("material-icons").text("add_shopping_cart");
@@ -68,8 +76,8 @@ function drawFeaturedProducts() {
   }
 }
 
-drawCarousel();
-// $('.carousel.carousel-slider').carousel({fullWidth: true});
+// drawCarousel();
+showSlides(1);
 drawFeaturedProducts();
 loadCart();
 updateCartDisplay();

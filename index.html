@@ -41,8 +41,18 @@
       <div class="row">
         <div class="col s12 center">
           <div class="slideshow-container center">
-
-
+            <div class="mySlides fade">
+              <img src="img/carousel/Eclipse_Solar_Guide.jpg">
+            </div>
+            <div class="mySlides fade">
+              <img src="img/carousel/Milky_Way.jpg">
+            </div>
+            <div class="mySlides fade">
+              <img src="img/carousel/Solar_GWP.jpg">
+            </div>
+            <div class="mySlides fade">
+              <img src="img/carousel/Dads_Grads_Sale.jpg">
+            </div>
             <!-- <img src="img/Discovery.jpg"> -->
           </div>
         </div>
@@ -61,19 +71,20 @@
               <p class="center">For undates and the latest news on What's Up and What's New please signup for our newsletter!</p>
             </div>
             <div class="row">
-              <form>
+              <form id="signup">
                 <div class="input-field col s5">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="icon_prefix" type="text" class="validate white">
-                  <label for="icon_prefix">First Name</label>
+                  <input id="name" type="text" class="validate white" required>
+                  <label for="name">First Name</label>
                 </div>
                 <div class="input-field col s5">
                   <i class="material-icons prefix">mail_outline</i>
-                  <input id="icon_email" type="email" class="validate white">
-                  <label for="icon_email">email</label>
+                  <!-- <input id="email" type="email" class="validate white"> -->
+                  <input id="email" type="email" class="validate white" title="The domain portion of the email address is invalid (the portion after the @)." pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
+                  <label for="email">email</label>
                 </div>
                 <div class="input-field col s2 signUp">
-                  <a class="waves-effect waves-light btn">Signup</a>
+                  <button class="waves-effect waves-light btn">Signup</button>
                 </div>
               </form>
             </div>

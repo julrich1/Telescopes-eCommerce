@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    image: "img/Discovery.jpg",
+    image: "http://lorempixel.com/300/400/",
     name: "Discovery 15\" F/5 Truss Tube Dobsonian Telescope",
     rating: 5,
     price: "2999.00",
@@ -10,7 +10,7 @@ const products = [
   },
   {
     id: 2,
-    image: "img/Orion.jpg",
+    image: "http://lorempixel.com/300/400/",
     name: "Orion Skyquest XT8I Intelliscope Dobsonian Telescope",
     rating: 3,
     price: "649.99",
@@ -19,7 +19,7 @@ const products = [
   },
   {
     id: 3,
-    image: "img/APM.jpg",
+    image: "http://lorempixel.com/300/400/",
     name: "APM 152/1200 APO Triplet",
     rating: 2,
     price: "12999.00",

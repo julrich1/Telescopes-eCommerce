@@ -3,7 +3,7 @@ function displayProducts(products) {
   if (!products) {
     products = getProducts(3);
   }
-  
+
   $("#prodList").empty();
 
   for (const product of products) {
@@ -38,8 +38,17 @@ function displayProducts(products) {
 function displayCategories() {
   const $catParent = $("#categories");
 
+  const $all = $("<a>").text("All");
+  $all.addClass("waves-effect waves-teal btn-flat dob");
+  $all.click(function() {
+    displayProducts();
+  });
+
+  $catParent.append($all);
+
   for (const category of categories) {
-    const $category = $("<span>").text(category);
+    const $category = $("<a>").text(category);
+    $category.addClass("waves-effect waves-teal btn-flat dob");
 
     $category.click(function() {
       displayProducts(getProductsByCategory(this.innerText.toLowerCase()));
