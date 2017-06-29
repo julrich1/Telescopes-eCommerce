@@ -18,9 +18,18 @@
  /* label underline focus color */
  .input-field input:focus {
    border-bottom: 1px solid red !important;
-   box-shadow: 0 1px 0 0 red !important;
+   /*box-shadow: 0 1px 0 0 red !important;*/
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: red !important;
  }
 
+ /*to add top padding on index signup button to match padding on input fields to the left*/
+ .signUp {
+   /*padding: 18.75px 0px 0px 0px !important;*/
+   margin-top: 18.75px;
+ }
  * {box-sizing:border-box}
 
  /* Slideshow container */
