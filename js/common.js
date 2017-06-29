@@ -43,6 +43,20 @@ function getProducts(number) {
   return result;
 }
 
+function getProductsById(ids) {
+  const result = [];
+
+  for (const product of products) {
+    for (const id of ids) {
+      if (id === product.id) {
+        result.push(product);
+      }
+    }
+  }
+
+  return result;
+}
+
 // Return a list of products based on a category
 function getProductsByCategory(categoryName) {
   const result = [];

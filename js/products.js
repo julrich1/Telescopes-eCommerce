@@ -1,5 +1,10 @@
-function displayProducts() {
-  const products = getProducts(3);
+function displayProducts(products) {
+  //If passed products, use those, otherwise get some from getProducts();
+  if (!products) {
+    products = getProducts(3);
+  }
+  
+  $("#prodList").empty();
 
   for (const product of products) {
     const $row = $("<div>").addClass("row");
@@ -30,19 +35,21 @@ function displayProducts() {
   }
 }
 
-//
-// <div class="row">
-//   <div class="col s5">
-//     <img src="https://www.optcorp.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/i/pi-rc24_astrograph.jpg" height=200px width=auto>
-//   </div>
-//   <div class="col s7">
-//     <h5>PLANEWAVE 24" RITCHEY-CHRÉTIEN ASTROGRAPH OTA</h5>
-//     <p>$64,995.00</p>
-//     <a>* * * * *</a>
-//     <p>The PlaneWave Instruments PW24-RC is a 24" (0.51 m) f/6.5 Ritchey-Chrétien (RC) Astrograph telescope OTA. The PW24-RC has a dual carbon fiber truss design, with 3 cooling fans ejecting air from the back of the telescope and 4 fans at the front of the primary mirror to quickly cool the primary mirror and keep its temperature stabilized. The instrument weight is 140 lb (64 kg) and it comes standard with a back plate retaining ring ready to accept the focuser of your choice.</p>
-//   </div>
-// </div>
+function displayCategories() {
+  const $catParent = $("#categories");
 
+  for (const category of categories) {
+    const $category = $("<span>").text(category);
+
+    $category.click(function() {
+      displayProducts(getProductsByCategory(this.innerText.toLowerCase()));
+    });
+
+    $catParent.append($category);
+  }
+}
+
+displayCategories();
 displayProducts();
 loadCart();
 updateCartDisplay();
