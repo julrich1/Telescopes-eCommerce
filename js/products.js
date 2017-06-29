@@ -1,7 +1,7 @@
 function displayProducts(products) {
   //If passed products, use those, otherwise get some from getProducts();
   if (!products) {
-    products = getProducts(3);
+    products = getProducts(10);
   }
 
   $("#prodList").empty();
