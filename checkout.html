@@ -124,7 +124,7 @@
               <label>State</label>
             </div>
             <div class="input-field col s4">
-              <input id="zip" type="text" class="validate" required>
+              <input id="zip" type="text" class="validate" pattern=".{5,9}" title="5 to 9 characters required" required>
               <label for="zip">Zip</label>
             </div>
             <div class="input-field col s4">
@@ -175,7 +175,7 @@
               <label>State</label>
             </div>
             <div class="input-field col s4">
-              <input id="a-zip" type="text" class="validate" required>
+              <input id="a-zip" type="text" class="validate" pattern=".{5,9}" title="5 to 9 characters required" required>
               <label for="zip">Zip</label>
             </div>
             <div class="input-field col s4">
@@ -187,7 +187,7 @@
           <div class="row">
             <div class="col s5">
               <div class="input-field col s12">
-                <input id="cCard" type="text" class="validate" required>
+                <input id="cCard" type="text" class="validate" pattern=".{16,}" title="16 characters minimum" required>
                 <label for="cCard">Credit Card Number</label>
               </div>
             </div>
