@@ -109,24 +109,24 @@
 
  /*jeff styles to make input fields smaller and closer together ***jm*/
  input {
-   margin: 0 0 0 0;
-   height: 2.1rem;
+   margin: 0 0 0 0 !important;
+   height: 2.1rem !important;
  }
 
  .select-dropdown {
-   margin: 0 0 0 0;
-   height: 2.1rem;
+   margin: 0 0 0 0 !important;
+   height: 2.1rem !important;
  }
 
  .row {
-   margin: 0 0 10px 0;
+   margin: 0 0 10px 0 !important;
  }
 
  .modal-content {
-   color: black;
+   color: black !important;
  }
 
  .modal-close {
-   color: white;
+   color: white !important;
  }
   /*jeff styles to make input fields smaller and closer together ***jm*/
