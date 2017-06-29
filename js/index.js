@@ -55,7 +55,7 @@ function drawFeaturedProducts() {
     // $cardDiv.attr("id", `product-${product.id}`);
     $cardImage.attr("src", product.image);
     $productName.text(product.name);
-    $productPrice.text(product.price);
+    $productPrice.text(formatCurrency(product.price));
 
     $cardButton.data("product-id", product.id);
 

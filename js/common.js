@@ -164,7 +164,7 @@ function getRatingElements(id) {
 }
 
 function formatCurrency(price) {
-  price = parseInt(price);
+  price = parseFloat(price);
   price = price.toFixed(2);
 
   price = price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");

@@ -12,7 +12,7 @@ function displayProducts(products) {
     const $img = $("<img>").attr("src", product.image);
     const $colDesc = $("<div>").addClass("col s7");
     const $h5 = $("<h5>").text(product.name);
-    const $price = $("<p>").text(product.price);
+    const $price = $("<p>").text(formatCurrency(product.price));
     const $checkout = $("<a>").addClass("waves-effect waves-light btn");
     const $icon = $("<i>").addClass("material-icons").text("add_shopping_cart");
     const $rating = getRatingElements(product.id);
