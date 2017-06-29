@@ -8,8 +8,8 @@ function displayProducts(products) {
 
   for (const product of products) {
     const $row = $("<div>").addClass("row");
-    const $colImg = $("<div>").addClass("col s5");
-    const $img = $("<img>").attr("src", product.image);
+    const $colImg = $("<div>").addClass("col s5 center");
+    const $img = $("<img>").attr("src", product.image)
     const $colDesc = $("<div>").addClass("col s7");
     const $h5 = $("<h5>").text(product.name);
     const $price = $("<p>").text(formatCurrency(product.price));
