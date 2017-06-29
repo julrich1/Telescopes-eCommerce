@@ -25,6 +25,10 @@
    color: red !important;
  }
 
+ .lft-mar {
+   margin-left: 10px;
+ }
+
  /*to add top padding on index signup button to match padding on input fields to the left*/
  .signUp {
    /*padding: 18.75px 0px 0px 0px !important;*/
