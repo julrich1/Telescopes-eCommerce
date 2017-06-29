@@ -104,11 +104,14 @@ function addToCart(id) {
 
 // Remove something from the cart based on its product ID
 function removeFromCart(id) {
+  console.log(id);
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].id === id) {
-      cart.splice(id, 1);
+      console.log("found");
+      cart.splice(i, 1);
     }
   }
+  console.log(cart);
 }
 
 //Save the cart to local storage
@@ -158,4 +161,16 @@ function getRatingElements(id) {
       return $ratingElement;
     }
   }
+}
+
+function formatCurrency(price) {
+  price = parseInt(price);
+  price = price.toFixed(2);
+
+  price = price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
+  price = price.split("");
+  price.unshift("$");
+
+  return price.join("");
 }

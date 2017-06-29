@@ -59,8 +59,11 @@ $("#ship2bill").click(function() {
 
 $("#checkForm").submit(function(event) {
   event.preventDefault();
-
-  if (validateInput()) {
+console.log(cart.length);
+  if(cart.length === 0) {
+    Materialize.toast('Please add items to your cart', 4000);
+  }
+  else if (validateInput()) {
     Materialize.toast('Order placed', 4000);
   }
   else {
@@ -79,13 +82,34 @@ function validateInput() {
 }
 
 function drawCheckout() {
-  for (const product of cart) {
-    const $tableRow = $("<tr>");
-    const $tdQty = $("<td>").text(product.quantity).addClass("center");
-    const $tdDescription = $("<td>").text(product.name);
-    const $tdPrice = $("<td>").text(formatCurrency(product.price)).addClass("right");
+  $("#checkout-table tbody").empty();
+  $("#total-table").empty();
 
-    $tableRow.append($tdQty, $tdDescription, $tdPrice);
+  if (cart.length) {
+    for (const product of cart) {
+      const $tableRow = $("<tr>");
+      const $tdQty = $("<td>").text(product.quantity).addClass("center");
+      const $tdDescription = $("<td>").text(product.name);
+      const $tdPrice = $("<td>").text(formatCurrency(product.price)).addClass("right-align");
+      const $tdDelete = $("<td>").html("<i class=\"material-icons prefix\">delete</i>").addClass("right-align cursor-pointer").data("product-id", product.id);
+
+      $tdDelete.click(function() {
+        console.log(jQuery.data(this, "product-id"));
+        removeFromCart(jQuery.data(this, "product-id"));
+        saveCart();
+        updateCartDisplay();
+        drawCheckout();
+      });
+
+      $tableRow.append($tdQty, $tdDescription, $tdPrice, $tdDelete);
+      $("#checkout-table").append($tableRow);
+    }
+  }
+  else {
+    const $tableRow = $("<tr>");
+    const $tdDescription = $("<td>").text("No products in cart").attr("colspan", "4").addClass("center");
+
+    $tableRow.append($tdDescription);
     $("#checkout-table").append($tableRow);
   }
 
@@ -105,19 +129,6 @@ function getCartTotal() {
   }
 
   return formatCurrency(total);
-}
-
-function formatCurrency(price) {
-  if (typeof price !== "string") {
-    price = price.toString();
-  }
-
-  price = price.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-
-  price = price.split("");
-  price.unshift("$");
-
-  return price.join("");
 }
 
 loadCart();

@@ -12,6 +12,10 @@
   width: 200px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /*this is for the homepage form color*/
  /* label focus color */
  .input-field input:focus + label {
