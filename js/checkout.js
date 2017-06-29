@@ -114,7 +114,7 @@ function drawCheckout() {
   }
 
   const $tableRow = $("<tr>");
-  const $tdTotal = $("<td>").addClass("right-align").html("<strong>Total</strong>").css("width", "70%");
+  const $tdTotal = $("<td>").addClass("right-align").html("<strong>Total</strong>").css("width", "60%");
   const $tdTotalPrice = $("<td>").addClass("right-align").html(`<strong>${getCartTotal()}</strong>`);
 
   $tableRow.append($tdTotal, $tdTotalPrice);
