@@ -44,7 +44,7 @@ function drawFeaturedProducts() {
     const $cardImageDiv = $("<div>").addClass("card-image");
     const $cardImage = $("<img>").addClass("product-image");
     const $cardTitle = $("<span>").addClass("card-title");
-    const $cardButton = $("<a>").addClass("btn-floating btn-large halfway-fab waves-effect waves-light red");
+    const $cardButton = $("<a>").addClass("btn-floating btn-large halfway-fab waves-effect waves-light amber accent-3");
     const $cardIcon = $("<i>").addClass("material-icons").text("add_shopping_cart");
     const $cardContent = $("<div>").addClass("card-content");
 
