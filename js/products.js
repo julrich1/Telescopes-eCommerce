@@ -16,7 +16,7 @@ function displayProducts(products) {
     const $checkout = $("<a>").addClass("waves-effect waves-light btn amber accent-3");
     const $icon = $("<i>").addClass("material-icons amber accent-3 light-blue-text text-darken-4").text("add_shopping_cart");
     const $rating = getRatingElements(product.id);
-    const $description = $("<p>").addClass("white").text(product.description);
+    const $description = $("<p>").text(product.description);
 
     $checkout.data("product-id", product.id);
 

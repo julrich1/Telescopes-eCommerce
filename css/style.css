@@ -108,7 +108,7 @@
  }
 
  /*jeff styles to make input fields smaller and closer together ***jm*/
- input {
+ input:not(.input-with-icon) {
    margin: 0 0 0 0 !important;
    height: 2.1rem !important;
  }
