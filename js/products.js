@@ -13,10 +13,10 @@ function displayProducts(products) {
     const $colDesc = $("<div>").addClass("col s7");
     const $h5 = $("<h5>").text(product.name);
     const $price = $("<p>").text(formatCurrency(product.price));
-    const $checkout = $("<a>").addClass("waves-effect waves-light btn");
-    const $icon = $("<i>").addClass("material-icons").text("add_shopping_cart");
+    const $checkout = $("<a>").addClass("waves-effect waves-light btn amber accent-3");
+    const $icon = $("<i>").addClass("material-icons amber accent-3 light-blue-text text-darken-4").text("add_shopping_cart");
     const $rating = getRatingElements(product.id);
-    const $description = $("<p>").text(product.description);
+    const $description = $("<p>").addClass("white").text(product.description);
 
     $checkout.data("product-id", product.id);
 
@@ -66,3 +66,10 @@ displayCategories();
 displayProducts();
 loadCart();
 updateCartDisplay();
+
+// this is to initilize modals ***jam
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+// this is to initilize modals ***jam

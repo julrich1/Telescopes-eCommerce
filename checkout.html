@@ -15,17 +15,17 @@
   <script defer src="js/checkout.js"></script>
 </head>
 
-<body>
+<body class="blue-grey darken-4">
 
   <header class="blue">
     <nav>
-      <div class="nav-wrapper blue darken-3">
+      <div class="nav-wrapper light-blue darken-4">
         <a href="#" class="brand-logo lft-mar">Telescopes eCommerce</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a class="blue darken-4" href="checkout.html">Checkout</a></li>
-          <a class="waves-effect waves-light btn" href="checkout.html" id="cart">Cart 0 Items</a>
+          <li><a class="light-blue darken-1" href="checkout.html">Checkout</a></li>
+          <a class="waves-effect waves-light btn amber accent-3 light-blue-text text-darken-4" href="checkout.html" id="cart">Cart 0 Items</a>
         </ul>
       </div>
     </nav>
@@ -33,41 +33,43 @@
 
   <main>
 
-    <div class="container">
+    <div class="container grey lighten-1">
 
       <div id="checkReceipt">
         <!-- //top section *** Checkout *** -->
         <div class="row">
-          <div class="row">
-            <h3>Checkout</h3>
+          <div class="col s12">
+            <div class="row">
+              <h3 class="light-blue-text text-darken-4 lft-mar">Checkout</h3>
+            </div>
           </div>
           <div class="row">
             <div class="col s12">
               <div style="display:flex">
-              <div class="col s8">
-                <!-- // 2 columns x rows with header 'Your Purchase' -->
-                <table class="striped" id="checkout-table">
-                  <thead>
-                    <tr>
-                      <th class="center">Quantity</th>
-                      <th>Description</th>
-                      <th class="right">Price</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- JavasScript inserts here -->
-                  </tbody>
-                </table>
+                <div class="col s9">
+                  <!-- // 2 columns x rows with header 'Your Purchase' -->
+                  <table class="striped" id="checkout-table">
+                    <thead>
+                      <tr>
+                        <th class="center">Quantity</th>
+                        <th>Description</th>
+                        <th class="right">Price</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- JavasScript inserts here -->
+                    </tbody>
+                  </table>
+                </div>
+                <!-- </div> -->
+                <!-- <div class="col s6" style="vertical-align: bottom; display: table-cell"> -->
+                <!-- // 2 colums x 1 row with 'Total' on column 1 'align:bottom' -->
+                <div class="col s3" style="align-self: flex-end">
+                  <table id="total-table">
+                  </table>
+                </div>
               </div>
-              <!-- </div> -->
-              <!-- <div class="col s6" style="vertical-align: bottom; display: table-cell"> -->
-              <!-- // 2 colums x 1 row with 'Total' on column 1 'align:bottom' -->
-              <div class="col s4" style="align-self: flex-end">
-                <table id="total-table">
-                </table>
-              </div>
-            </div>
             </div>
           </div>
         </div>
@@ -85,35 +87,35 @@
       <div id="checkForm">
         <form>
           <div class="row">
-            <h6><strong>Shipping</strong></h6>
+            <h6 class="lft-mar"><strong>Shipping</strong></h6>
           </div>
           <div class="row">
             <div class="input-field col s4">
               <input id="first_name" type="text" class="validate" required>
-              <label for="first_name">First Name</label>
+              <label class="grey-text text-darken-1" for="first_name">First Name</label>
             </div>
             <div class="input-field col s4">
               <input id="last_name" type="text" class="validate" required>
-              <label for="last_name">Last Name</label>
+              <label class="grey-text text-darken-1" for="last_name">Last Name</label>
             </div>
             <div class="input-field col s4">
               <input id="company" type="text" class="validate">
-              <label for="company">Company</label>
+              <label class="grey-text text-darken-1" for="company">Company</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
               <input id="add1" type="text" class="validate" required>
-              <label for="add1">Address 1</label>
+              <label class="grey-text text-darken-1" for="add1">Address 1</label>
             </div>
             <div class="input-field col s6">
               <input id="add2" type="text" class="validate">
-              <label for="add2">Address 2</label>
+              <label class="grey-text text-darken-1" for="add2">Address 2</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <select id="state" required>
+              <select class="grey-text text-darken-1" id="state" required>
                 <option value="" selected disabled>Choose your State</option>
                 <option value="Alaska">Alaska</option>
                 <option value="California">California</option>
@@ -127,47 +129,47 @@
             </div>
             <div class="input-field col s4">
               <input id="zip" type="text" class="validate" pattern=".{5,9}" title="5 to 9 characters required" required>
-              <label for="zip">Zip</label>
+              <label class="grey-text text-darken-1" for="zip">Zip</label>
             </div>
             <div class="input-field col s4">
               <p>
                 <input type="checkbox" id="ship2bill" />
-                <label for="ship2bill">Copy Shipping to Billing?</label>
+                <label class="black-text" for="ship2bill">Copy Shipping to Billing?</label>
               </p>
             </div>
           </div>
 
           <div class="row">
-            <h6><strong>Billing</strong></h6>
+            <h6 class="lft-mar"><strong>Billing</strong></h6>
           </div>
           <div class="row">
             <div class="input-field col s4">
               <input id="a-first_name" type="text" class="validate" required>
-              <label for="first_name">First Name</label>
+              <label class="grey-text text-darken-1" for="first_name">First Name</label>
             </div>
             <div class="input-field col s4">
               <input id="a-last_name" type="text" class="validate" required>
-              <label for="last_name">Last Name</label>
+              <label class="grey-text text-darken-1" for="last_name">Last Name</label>
             </div>
             <div class="input-field col s4">
               <input id="a-company" type="text" class="validate">
-              <label for="company">Company</label>
+              <label class="grey-text text-darken-1" for="company">Company</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
               <input id="a-add1" type="text" class="validate" required>
-              <label for="add1">Address 1</label>
+              <label class="grey-text text-darken-1" for="add1">Address 1</label>
             </div>
             <div class="input-field col s6">
               <input id="a-add2" type="text" class="validate">
-              <label for="add2">Address 2</label>
+              <label class="grey-text text-darken-1" for="add2">Address 2</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s4">
-              <select id="a-state" required>
-                <option value="" disabled selected>Choose your State</option>
+              <select class="grey-text text-darken-1" id="a-state" required>
+                <option  value="" disabled selected>Choose your State</option>
                 <option value="Alaska">Alaska</option>
                 <option value="California">California</option>
                 <option value="Hawaii">Hawaii</option>
@@ -180,19 +182,19 @@
             </div>
             <div class="input-field col s4">
               <input id="a-zip" type="text" class="validate" pattern=".{5,9}" title="5 to 9 characters required" required>
-              <label for="zip">Zip</label>
+              <label class="grey-text text-darken-1" for="zip">Zip</label>
             </div>
             <div class="input-field col s4">
             </div>
           </div>
 
           <div class="row">
-            <h6><strong>Credit Card Information</strong></h6>
+            <h6 class="lft-mar"><strong>Credit Card Information</strong></h6>
           </div>
           <div class="row">
             <div class="col s5 input-field">
               <input id="cCard" type="text" class="validate" pattern=".{16,}" title="16 characters minimum" required>
-              <label for="cCard">Credit Card Number</label>
+              <label class="grey-text text-darken-1" for="cCard">Credit Card Number</label>
             </div>
             <div class="col s7">
               <!-- <div class="row"> -->
@@ -200,14 +202,14 @@
                 <!-- <div class="row"> -->
                 <div class="input-field col s4">
                   <input id="exp" type="text" class="validate" required>
-                  <label for="exp">Expiration</label>
+                  <label class="grey-text text-darken-1" for="exp">Expiration</label>
                 </div>
                 <div class="input-field col s4">
                   <input id="cvc" type="text" class="validate" required>
-                  <label for="cvc">CVC</label>
+                  <label class="grey-text text-darken-1" for="cvc">CVC</label>
                 </div>
                 <div class="input-field col s4">
-                  <button class="waves-effect waves-light btn" id="purchase-button">Purchase</button>
+                  <button class="waves-effect waves-light btn amber accent-3 light-blue-text text-darken-4" id="purchase-button">Purchase</button>
                 </div>
               </div>
             </div>
@@ -219,25 +221,46 @@
 
   </main>
 
-  <footer class="page-footer blue darken-3">
-    <div class="container blue darken-3">
-      <div class="row blue darken-3">
-        <div class="col s4 blue darken-3">
+  <footer class="page-footer blue-grey darken-4">
+    <div class="container blue-grey darken-4">
+      <div class="row blue-grey darken-4">
+        <div class="col s4 blue-grey darken-4">
           <h5 class="white-text">Telescopes eCommerce</h5>
-          <p class="grey-text text-lighten-4">The Best View on Earth</p>
+          <p class="white-text">The Best View on Earth</p>
         </div>
         <div class="col s4">
           <!-- <img src="img/maps.jpg" height="150" width="auto" href="https://goo.gl/maps/vC4rv5FSNJn"> -->
-          <a href="https://goo.gl/maps/vC4rv5FSNJn" target="_blank"><img src="img/maps.jpg" width="150" height="auto"></a>
+          <a href="https://goo.gl/maps/vC4rv5FSNJn" target="_blank"><img src="img/maps.jpg" width="utoa" height="155px"></a>
         </div>
         <div class="col s4">
           <!-- <h5 class="white-text">Links</h5> -->
-          <ul>
+
+          <table>
+            <thead>
+              <th></th>
+              <th class="lft-mar">Articles</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="img/Articles/Jupiter.jpeg" height="30px" width="auto"></td>
+                <td><a class="waves-effect waves-light modal-close lft-mar" href="#modal1"> June 29, 2017: Jupiter </a></td>
+              </tr>
+              <tr>
+                <td><img src="img/Articles/sun.jpeg" height="30px" width="auto"></td>
+                <td><a class="waves-effect waves-light modal-close lft-mar" href="#modal2"> June 21, 2017: Sun </a></td>
+              </tr>
+              <tr>
+                <td><img src="img/Articles/r_aquarii.jpeg" height="30px" width="auto"></td>
+                <td><a class="waves-effect waves-light modal-close lft-mar" href="#modal3"> June 12, 2017: R Aquarii </a></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <ul>
             <li><a class="grey-text text-lighten-3 lft-mar" href="#!">Articles</a></li>
             <li><img src="img/Articles/Jupiter.jpeg" height="30px" width="auto"><a class="waves-effect waves-light modal-close lft-mar" href="#modal1"> June 29, 2017: Jupiter </a></li>
             <li><img src="img/Articles/sun.jpeg" height="30px" width="auto"><a class="waves-effect waves-light modal-close lft-mar" href="#modal2"> June 21, 2017: Sun </a></li>
             <li><img src="img/Articles/r_aquarii.jpeg" height="30px" width="auto"><a class="waves-effect waves-light modal-close lft-mar" href="#modal3"> June 12, 2017: R Aquarii </a></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
@@ -293,13 +316,13 @@
         </div>
       </div>
     </div>
+    <!-- </div> -->
+    <div class="footer-copyright blue-grey darken-4">
+      <!-- <div class="container"> -->
+      <a class="center-align">© 2017 Galvanize G56 Jacob & Jeff</a>
+      <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
       <!-- </div> -->
-      <div class="footer-copyright blue darken-4">
-        <!-- <div class="container"> -->
-        <a class="lft-mar">© 2017 Galvanize G56 Jacob & Jeff</a>
-        <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-        <!-- </div> -->
-      </div>
+    </div>
 
   </footer>
 
