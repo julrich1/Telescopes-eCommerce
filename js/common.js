@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Discovery 15\" F/5 Truss Tube Dobsonian Telescope",
     rating: 5,
     price: "2999.00",
@@ -10,7 +10,7 @@ const products = [
   },
   {
     id: 2,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Orion Skyquest XT8I Intelliscope Dobsonian Telescope",
     rating: 3,
     price: "649.99",
@@ -19,7 +19,7 @@ const products = [
   },
   {
     id: 3,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "APM 152/1200 APO Triplet",
     rating: 2,
     price: "12999.00",
@@ -28,7 +28,7 @@ const products = [
   },
   {
     id: 4,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Meade 16\" ACF LX200 Telescope w/ giant tripod",
     rating: 4,
     price: "14349.00",
@@ -37,7 +37,7 @@ const products = [
   },
   {
     id: 5,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Celestron 14\" EdgeHD CGX-L TELESCOPE",
     rating: 4,
     price: "8499.00",
@@ -46,7 +46,7 @@ const products = [
   },
   {
     id: 6,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "TEC 140MM F/7 APO ED Refractor Telescope",
     rating: 5,
     price: "5900.00",
@@ -55,7 +55,7 @@ const products = [
   },
   {
     id: 7,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Takahashi TSA-120 Triplet APO Refractor",
     rating: 2,
     price: "4430.00",
@@ -64,7 +64,7 @@ const products = [
   },
   {
     id: 8,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Sky-watcher 20\" Stargate Truss-Tube Go-to Dobsonian",
     rating: 1,
     price: "7999.00",
@@ -73,7 +73,7 @@ const products = [
   },
   {
     id: 9,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Orion Skyquest XX14G Go-tO Truss Tube Dobsonian Telescope",
     rating: 4,
     price: "2799.00",
@@ -82,7 +82,7 @@ const products = [
   },
   {
     id: 10,
-    image: "http://lorempixel.com/300/400/",
+    image: "img/telescope.png",
     name: "Meade 12\" Dobsonian Lightbridge Telescope",
     rating: 5,
     price: "999.00",
