@@ -136,6 +136,7 @@ function getProductsByCategory(categoryName) {
 }
 
 // Sort product based on supplied criteria
+// COMMENT: This functons is not called anywhere, please remove all unused code
 function sortProducts(productList, criteria) {
   if (criteria === "price") {
     //Do sorting
@@ -167,6 +168,7 @@ function addToCart(id) {
 
 // Remove something from the cart based on its product ID
 function removeFromCart(id) {
+  // COMMENT: Please remove all comments
   console.log(id);
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].id === id) {
@@ -174,6 +176,7 @@ function removeFromCart(id) {
       cart.splice(i, 1);
     }
   }
+  // COMMENT: Please remove all comments
   console.log(cart);
 }
 

@@ -34,6 +34,7 @@ function showSlides(n) {
   slideTimer = setInterval(showSlides, 3000);
 }
 
+// COMMENT: Remove all commented out code
 // function showSlidesTimer() {
 //     var i;
 //     var slides = document.getElementsByClassName("mySlides");
