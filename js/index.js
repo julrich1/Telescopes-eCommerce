@@ -1,3 +1,4 @@
+// COMMENT: Please remove all unused code.
 // function drawCarousel() {
 //   const products = getProducts(3);
 //
@@ -52,6 +53,7 @@ function drawFeaturedProducts() {
     const $productPrice = $("<p>");
     const $productRating = getRatingElements(product.id);
 
+    // COMMENT: Please remove all unused code
     // $cardDiv.attr("id", `product-${product.id}`);
     $cardImage.attr("src", product.image);
     $productName.text(product.name);
@@ -75,6 +77,9 @@ function drawFeaturedProducts() {
     $("#featuredProd").append($colDiv);
   }
 }
+
+// COMMENT: You have code the runs immediately at the beggining and at the end of the file.
+// Pick one and stay consistent.
 
 // drawCarousel();
 showSlides(1);

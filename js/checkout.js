@@ -17,6 +17,8 @@ $(document).ready(function() {
 
 $("#ship2bill").click(function() {
   if ($("#ship2bill").prop("checked")) {
+
+    // COMMENT: This could have been created using a an array of id's and a loop
     $("#a-first_name").val($("#first_name").val());
     $("#a-first_name").prop("disabled", true);
     $("#a-first_name + label").addClass("active");
@@ -59,6 +61,7 @@ $("#ship2bill").click(function() {
 
 $("#checkForm").submit(function(event) {
   event.preventDefault();
+  // COMMENT: remove all console.log()
 console.log(cart.length);
   if(cart.length === 0) {
     Materialize.toast('Please add items to your cart', 4000);
@@ -137,6 +140,7 @@ drawCheckout();
 formatCurrency("58444444494.99");
 
 // this is to initilize modals ***jam
+// COMMENTS: You have to $(document).ready(), please use only one.
 $(document).ready(function(){
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
